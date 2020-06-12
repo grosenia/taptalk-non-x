@@ -1,6 +1,7 @@
 package io.taptalk.TapTalk.API.Api;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.concurrent.Executor;

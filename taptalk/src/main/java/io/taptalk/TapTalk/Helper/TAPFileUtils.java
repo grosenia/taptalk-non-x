@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import io.taptalk.TapTalk.Manager.TAPFileDownloadManager;
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.FILEPROVIDER_AUTHORITY;
 
@@ -135,8 +135,7 @@ public class TAPFileUtils {
                         if (path != null) {
                             return path;
                         }
-                    } catch (Exception e) {
-                    }
+                    } catch (Exception e) {}
                 }
 
                 // Path could not be retrieved using ContentResolver, therefore copy file to accessible cache using streams

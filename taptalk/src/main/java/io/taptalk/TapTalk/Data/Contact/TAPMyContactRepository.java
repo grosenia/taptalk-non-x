@@ -49,7 +49,7 @@ public class TAPMyContactRepository {
     }
 
     public void insertAndGetContact(List<TAPUserModel> userModels, TAPDatabaseListener<TAPUserModel> listener) {
-        new Thread(() -> {
+        new Thread(() ->{
             myContactDao.insert(userModels);
             List<TAPUserModel> myContactList = myContactDao.getAllMyContact();
             listener.onSelectFinished(myContactList);

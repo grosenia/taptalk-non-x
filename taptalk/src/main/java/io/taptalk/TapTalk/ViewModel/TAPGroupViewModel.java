@@ -42,7 +42,7 @@ public class TAPGroupViewModel extends AndroidViewModel {
     }
 
     public List<String> getParticipantsIDs() {
-        return null == participantsIDs ? participantsIDs = new ArrayList<>() : participantsIDs;
+        return null == participantsIDs? participantsIDs = new ArrayList<>() : participantsIDs;
     }
 
     public void setParticipantsIDs(List<String> participantsIDs) {

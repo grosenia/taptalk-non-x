@@ -15,10 +15,8 @@ public class RecyclerViewOverScrollDecorAdapter implements IOverScrollDecoratorA
 
     protected interface Impl {
         boolean isInAbsoluteStart();
-
         boolean isInAbsoluteEnd();
     }
-
     protected final RecyclerView mRecyclerView;
     protected final Impl mImpl;
 
@@ -29,7 +27,8 @@ public class RecyclerViewOverScrollDecorAdapter implements IOverScrollDecoratorA
 
         final RecyclerView.LayoutManager layoutManager = mRecyclerView.getLayoutManager();
         if (layoutManager instanceof LinearLayoutManager ||
-                layoutManager instanceof StaggeredGridLayoutManager) {
+                layoutManager instanceof StaggeredGridLayoutManager)
+        {
             final int orientation =
                     (layoutManager instanceof LinearLayoutManager
                             ? ((LinearLayoutManager) layoutManager).getOrientation()
@@ -40,7 +39,9 @@ public class RecyclerViewOverScrollDecorAdapter implements IOverScrollDecoratorA
             } else {
                 mImpl = new ImplVerticalLayout();
             }
-        } else {
+        }
+        else
+        {
             throw new IllegalArgumentException("Recycler views with custom layout managers are not supported by this adapter out of the box." +
                     "Try implementing and providing an explicit 'impl' parameter to the other c'tors, or otherwise create a custom adapter subclass of your own.");
         }

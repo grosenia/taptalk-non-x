@@ -55,7 +55,7 @@ public class TAPRoomListViewModel extends AndroidViewModel {
         this.roomPointer = roomPointer;
     }
 
-    public void addRoomPointer(TAPRoomListModel roomModel) {
+    public void addRoomPointer(TAPRoomListModel roomModel){
         getRoomPointer().put(roomModel.getLastMessage().getRoom().getRoomID(), roomModel);
     }
 

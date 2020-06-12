@@ -12,10 +12,7 @@ import io.taptalk.TapTalk.Model.TAPSearchChatModel;
 
 @Entity(tableName = "Recent_Search")
 public class TAPRecentSearchEntity {
-    @PrimaryKey
-    @NonNull
-    @ColumnInfo(name = "roomID")
-    private String roomID;
+    @PrimaryKey @NonNull @ColumnInfo(name = "roomID") private String roomID;
     @ColumnInfo(name = "name") private String roomName;
     @ColumnInfo(name = "color") private String roomColor;
     @ColumnInfo(name = "type") private Integer roomType;

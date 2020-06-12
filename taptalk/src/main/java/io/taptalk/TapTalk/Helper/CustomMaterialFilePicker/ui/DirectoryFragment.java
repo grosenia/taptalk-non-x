@@ -15,7 +15,7 @@ import io.taptalk.TapTalk.Helper.CustomMaterialFilePicker.filter.CompositeFilter
 import io.taptalk.TapTalk.Helper.CustomMaterialFilePicker.utils.FileUtils;
 import io.taptalk.TapTalk.Helper.CustomMaterialFilePicker.widget.EmptyRecyclerView;
 import io.taptalk.TapTalk.Helper.OverScrolled.OverScrollDecoratorHelper;
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 /**
  * Created by Dimorinny on 24.10.15.
