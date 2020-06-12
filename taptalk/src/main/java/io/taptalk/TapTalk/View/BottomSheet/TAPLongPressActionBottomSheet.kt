@@ -1,19 +1,17 @@
 package io.taptalk.TapTalk.View.BottomSheet
 
 import android.os.Bundle
+import android.support.design.widget.BottomSheetDialogFragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import io.taptalk.TapTalk.Const.TAPDefaultConstant.MessageType.*
 import io.taptalk.TapTalk.Listener.TAPAttachmentListener
-import io.taptalk.TapTalk.Manager.TAPChatManager
 import io.taptalk.TapTalk.Model.TAPAttachmentModel
 import io.taptalk.TapTalk.Model.TAPMessageModel
 import io.taptalk.TapTalk.View.Adapter.TAPAttachmentAdapter
-import io.taptalk.TapTalk.R
-import io.taptalk.TapTalk.View.Activity.TapUIChatActivity
+import io.taptalk.Taptalk.R
 import kotlinx.android.synthetic.main.tap_fragment_long_press_action_bottom_sheet.*
 
 class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
@@ -22,8 +20,7 @@ class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
         CHAT_BUBBLE_TYPE,
         LINK_TYPE,
         EMAIL_TYPE,
-        PHONE_TYPE,
-        MENTION_TYPE
+        PHONE_TYPE
     }
 
     var longPressType: LongPressType = LongPressType.CHAT_BUBBLE_TYPE
@@ -52,7 +49,7 @@ class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
     companion object {
         fun newInstance(longPressType: LongPressType, url: String, linkifyResult: String, bottomSheetListener: TAPAttachmentListener): TAPLongPressActionBottomSheet {
             val fragment = TAPLongPressActionBottomSheet(longPressType, url, linkifyResult, bottomSheetListener)
-            val args = Bundle()
+            val args: Bundle = Bundle()
             fragment.arguments = args
             return fragment
         }
@@ -73,14 +70,7 @@ class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val instanceKey = try {
-            val activity = context as TapUIChatActivity
-            activity.instanceKey
-        } catch (e: Exception) {
-            ""
-        }
-
-        var longPressAdapter = TAPAttachmentAdapter(instanceKey, listOf(), message,
+        var longPressAdapter = TAPAttachmentAdapter(listOf(), message,
                 bottomSheetListener, onClickListener)
         when (longPressType) {
             LongPressType.CHAT_BUBBLE_TYPE -> {
@@ -88,28 +78,26 @@ class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
 //                    longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createFailedMessageBubbleLongPressMenu(),
 //                            message, bottomSheetListener, onClickListener)
                     dismiss()
-                } else if (message?.isDeleted == true) {
-                    dismiss()
                 } else if (!message?.sending!!) {
                     when (message?.type) {
                         TYPE_IMAGE -> {
-                            longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createImageBubbleLongPressMenu(instanceKey, message),
+                            longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createImageBubbleLongPressMenu(message),
                                     message, bottomSheetListener, onClickListener)
                         }
                         TYPE_VIDEO -> {
-                            longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createVideoBubbleLongPressMenu(instanceKey, message),
+                            longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createVideoBubbleLongPressMenu(message),
                                     message, bottomSheetListener, onClickListener)
                         }
                         TYPE_FILE -> {
-                            longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createFileBubbleLongPressMenu(instanceKey, message),
+                            longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createFileBubbleLongPressMenu(message),
                                     message, bottomSheetListener, onClickListener)
                         }
                         TYPE_LOCATION -> {
-                            longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createLocationBubbleLongPressMenu(instanceKey, message),
+                            longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createLocationBubbleLongPressMenu(message),
                                     message, bottomSheetListener, onClickListener)
                         }
                         TYPE_TEXT -> {
-                            longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createTextBubbleLongPressMenu(instanceKey, message),
+                            longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createTextBubbleLongPressMenu(message),
                                     message, bottomSheetListener, onClickListener)
                         }
                         else -> {
@@ -121,25 +109,16 @@ class TAPLongPressActionBottomSheet : BottomSheetDialogFragment {
                 }
             }
             LongPressType.EMAIL_TYPE -> {
-                longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createEmailLongPressMenu(),
+                longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createEmailLongPressMenu(),
                         urlMessage, linkifyResult, bottomSheetListener, onClickListener)
             }
             LongPressType.LINK_TYPE -> {
-                longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createLinkLongPressMenu(),
+                longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createLinkLongPressMenu(),
                         urlMessage, linkifyResult, bottomSheetListener, onClickListener)
             }
             LongPressType.PHONE_TYPE -> {
-                longPressAdapter = TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createPhoneLongPressMenu(),
+                longPressAdapter = TAPAttachmentAdapter(TAPAttachmentModel.createPhoneLongPressMenu(),
                         urlMessage, linkifyResult, bottomSheetListener, onClickListener)
-            }
-            LongPressType.MENTION_TYPE -> {
-                longPressAdapter = if (linkifyResult.substring(1) == TAPChatManager.getInstance(instanceKey).activeUser.username) {
-                    TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createCopyLongPressMenu(),
-                            urlMessage, linkifyResult, bottomSheetListener, onClickListener)
-                } else {
-                    TAPAttachmentAdapter(instanceKey, TAPAttachmentModel.createMentionLongPressMenu(),
-                            urlMessage, linkifyResult, bottomSheetListener, onClickListener)
-                }
             }
         }
         rv_long_press.adapter = longPressAdapter

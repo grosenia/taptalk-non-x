@@ -1,24 +1,21 @@
 package io.taptalk.TapTalk.View.BottomSheet;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetDialogFragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
 import io.taptalk.TapTalk.Listener.TAPAttachmentListener;
 import io.taptalk.TapTalk.View.Adapter.TAPAttachmentAdapter;
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 public class TAPAttachmentBottomSheet extends BottomSheetDialogFragment {
 
-    private String instanceKey = "";
     private RecyclerView recyclerView;
     private TAPAttachmentListener attachmentListener;
     private View.OnClickListener onClickListener = v -> dismiss();
@@ -28,13 +25,11 @@ public class TAPAttachmentBottomSheet extends BottomSheetDialogFragment {
         // Required empty public constructor
     }
 
-    public TAPAttachmentBottomSheet(String instanceKey, TAPAttachmentListener attachmentListener) {
-        this.instanceKey = instanceKey;
+    public TAPAttachmentBottomSheet(TAPAttachmentListener attachmentListener) {
         this.attachmentListener = attachmentListener;
     }
 
-    public TAPAttachmentBottomSheet(String instanceKey, boolean isImagePickerBottomSheet, TAPAttachmentListener attachmentListener) {
-        this.instanceKey = instanceKey;
+    public TAPAttachmentBottomSheet(boolean isImagePickerBottomSheet, TAPAttachmentListener attachmentListener) {
         this.isImagePickerBottomSheet = isImagePickerBottomSheet;
         this.attachmentListener = attachmentListener;
     }
@@ -62,7 +57,7 @@ public class TAPAttachmentBottomSheet extends BottomSheetDialogFragment {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerView);
 
-        recyclerView.setAdapter(new TAPAttachmentAdapter(instanceKey, isImagePickerBottomSheet, attachmentListener, onClickListener));
+        recyclerView.setAdapter(new TAPAttachmentAdapter(isImagePickerBottomSheet, attachmentListener, onClickListener));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setHasFixedSize(true);
     }
