@@ -13,13 +13,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import io.taptalk.TapTalk.BuildConfig;
 import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Helper.TapTalk;
 import io.taptalk.TapTalk.Interface.TapTalkSocketInterface;
 import io.taptalk.TapTalk.Manager.TAPConnectionManager;
 import io.taptalk.TapTalk.Manager.TAPNetworkStateManager;
-import io.taptalk.Taptalk.BuildConfig;
-import io.taptalk.Taptalk.R;
+import io.taptalk.TapTalk.R;
 
 public class TAPConnectionStatusFragment extends Fragment implements TapTalkSocketInterface {
 

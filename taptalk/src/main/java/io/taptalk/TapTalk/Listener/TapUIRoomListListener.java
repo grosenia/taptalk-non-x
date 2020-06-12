@@ -7,10 +7,10 @@ import android.support.annotation.Keep;
 import java.lang.ref.WeakReference;
 
 import io.taptalk.TapTalk.Interface.TapUIRoomListInterface;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Activity.TAPMyAccountActivity;
 import io.taptalk.TapTalk.View.Activity.TAPNewChatActivity;
 import io.taptalk.TapTalk.View.Fragment.TapUIMainRoomListFragment;
-import io.taptalk.Taptalk.R;
 
 @Keep
 public abstract class TapUIRoomListListener implements TapUIRoomListInterface {

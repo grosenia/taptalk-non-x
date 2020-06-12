@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import io.taptalk.TapTalk.Helper.OverScrolled.OverScrollDecoratorHelper;
 import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Model.TAPUserModel;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Adapter.TapContactListAdapter;
 import io.taptalk.TapTalk.ViewModel.TAPContactListViewModel;
-import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Model.ResponseModel.TapContactListModel.TYPE_DEFAULT_CONTACT_LIST;
 

@@ -47,10 +47,10 @@ import io.taptalk.TapTalk.Model.ResponseModel.TAPGetUserResponse;
 import io.taptalk.TapTalk.Model.ResponseModel.TapContactListModel;
 import io.taptalk.TapTalk.Model.TAPErrorModel;
 import io.taptalk.TapTalk.Model.TAPUserModel;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Adapter.TapContactListAdapter;
 import io.taptalk.TapTalk.View.Adapter.TapSelectedGroupMemberAdapter;
 import io.taptalk.TapTalk.ViewModel.TAPContactListViewModel;
-import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.GROUP_ACTION;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.GROUP_IMAGE;

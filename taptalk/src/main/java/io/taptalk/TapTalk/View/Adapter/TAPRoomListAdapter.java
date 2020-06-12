@@ -37,8 +37,8 @@ import io.taptalk.TapTalk.Manager.TapUI;
 import io.taptalk.TapTalk.Model.TAPRoomListModel;
 import io.taptalk.TapTalk.Model.TAPRoomModel;
 import io.taptalk.TapTalk.Model.TAPUserModel;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.ViewModel.TAPRoomListViewModel;
-import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.MessageType.TYPE_SYSTEM_MESSAGE;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.RoomType.TYPE_GROUP;
