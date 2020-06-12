@@ -358,7 +358,7 @@ public class TAPChatViewModel extends AndroidViewModel {
     }
 
     public LinkedHashMap<String, TAPUserModel> getGroupTyping() {
-        return null == groupTyping? groupTyping = new LinkedHashMap<>() : groupTyping;
+        return null == groupTyping ? groupTyping = new LinkedHashMap<>() : groupTyping;
     }
 
     public void setGroupTyping(LinkedHashMap<String, TAPUserModel> groupTyping) {

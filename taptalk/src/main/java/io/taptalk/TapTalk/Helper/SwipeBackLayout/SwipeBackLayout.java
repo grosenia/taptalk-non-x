@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Activity.TapUIChatActivity;
-import io.taptalk.Taptalk.R;
 
 public class SwipeBackLayout extends ConstraintLayout {
     /**
@@ -313,7 +313,7 @@ public class SwipeBackLayout extends ConstraintLayout {
     /**
      * Set a drawable used for edge shadow.
      *
-     * @param shadow    Drawable to use
+     * @param shadow   Drawable to use
      * @param edgeFlag Combination of edge flags describing the edge to set
      * @see #EDGE_LEFT
      * @see #EDGE_RIGHT
@@ -333,7 +333,7 @@ public class SwipeBackLayout extends ConstraintLayout {
     /**
      * Set a drawable used for edge shadow.
      *
-     * @param resId     Resource of drawable to use
+     * @param resId    Resource of drawable to use
      * @param edgeFlag Combination of edge flags describing the edge to set
      * @see #EDGE_LEFT
      * @see #EDGE_RIGHT

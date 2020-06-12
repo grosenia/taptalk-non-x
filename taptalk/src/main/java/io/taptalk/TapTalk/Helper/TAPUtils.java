@@ -83,12 +83,12 @@ import io.taptalk.TapTalk.Model.TAPMediaPreviewModel;
 import io.taptalk.TapTalk.Model.TAPMessageModel;
 import io.taptalk.TapTalk.Model.TAPRoomModel;
 import io.taptalk.TapTalk.Model.TAPUserModel;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Activity.TAPChatProfileActivity;
 import io.taptalk.TapTalk.View.Activity.TAPMapActivity;
 import io.taptalk.TapTalk.View.Activity.TAPVideoPlayerActivity;
 import io.taptalk.TapTalk.View.Activity.TAPWebBrowserActivity;
 import io.taptalk.TapTalk.View.Activity.TapUIChatActivity;
-import io.taptalk.Taptalk.R;
 
 import static android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.GROUP_TYPING_MAP;

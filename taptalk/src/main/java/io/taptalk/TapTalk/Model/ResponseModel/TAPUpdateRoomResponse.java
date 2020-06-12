@@ -9,9 +9,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.taptalk.TapTalk.Model.TAPRoomModel;
 
 public class TAPUpdateRoomResponse implements Parcelable {
-    @Nullable @JsonProperty("room") private TAPRoomModel room;
+    @Nullable
+    @JsonProperty("room")
+    private TAPRoomModel room;
 
-    public TAPUpdateRoomResponse() {}
+    public TAPUpdateRoomResponse() {
+    }
 
     public TAPUpdateRoomResponse(@Nullable TAPRoomModel room) {
         this.room = room;

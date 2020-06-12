@@ -42,7 +42,7 @@ public class TAPCustomTabActivityHelper implements TAPServiceConnectionCallback 
     public interface CustomTabFallback {
         /**
          * @param activity activity yang mau buka browser
-         * @param uri link url yang mau di buka
+         * @param uri      link url yang mau di buka
          */
         void openUri(Activity activity, Uri uri);
     }
@@ -79,6 +79,7 @@ public class TAPCustomTabActivityHelper implements TAPServiceConnectionCallback 
 
     /**
      * Unbinds the Activity from the Custom Tabs Service.
+     *
      * @param activity the activity that is connected to the service.
      */
     public void unbindCustomTabsService(Activity activity) {
@@ -105,6 +106,7 @@ public class TAPCustomTabActivityHelper implements TAPServiceConnectionCallback 
 
     /**
      * Register a Callback to be called when connected or disconnected from the Custom Tabs Service.
+     *
      * @param connectionCallback
      */
     public void setConnectionCallback(ConnectionCallback connectionCallback) {
@@ -113,6 +115,7 @@ public class TAPCustomTabActivityHelper implements TAPServiceConnectionCallback 
 
     /**
      * Binds the Activity to the Custom Tabs Service.
+     *
      * @param activity the activity to be binded to the service.
      */
     public void bindCustomTabsService(Activity activity) {
@@ -126,8 +129,8 @@ public class TAPCustomTabActivityHelper implements TAPServiceConnectionCallback 
     }
 
     /**
-     * @see {@link CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)}.
      * @return true if call to mayLaunchUrl was accepted.
+     * @see {@link CustomTabsSession#mayLaunchUrl(Uri, Bundle, List)}.
      */
     public boolean mayLaunchUrl(Uri uri, Bundle extras, List<Bundle> otherLikelyBundles) {
         if (null == mClient) return false;

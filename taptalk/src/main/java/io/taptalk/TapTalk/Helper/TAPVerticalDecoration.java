@@ -24,7 +24,7 @@ public class TAPVerticalDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         outRect.left = 0;
         outRect.right = 0;
-        if (parent.getChildLayoutPosition(view) == index){
+        if (parent.getChildLayoutPosition(view) == index) {
             outRect.top = top;
             outRect.bottom = bottom;
         } else {

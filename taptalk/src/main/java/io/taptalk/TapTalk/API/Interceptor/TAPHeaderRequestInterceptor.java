@@ -6,9 +6,9 @@ import android.util.Base64;
 
 import java.io.IOException;
 
+import io.taptalk.TapTalk.BuildConfig;
 import io.taptalk.TapTalk.Helper.TapTalk;
 import io.taptalk.TapTalk.Manager.TAPDataManager;
-import io.taptalk.Taptalk.BuildConfig;
 import okhttp3.Interceptor;
 import okhttp3.MultipartBody;
 import okhttp3.Request;
@@ -34,7 +34,7 @@ public class TAPHeaderRequestInterceptor implements Interceptor {
         String appKey = Base64.encodeToString((APP_KEY_ID + ":" + APP_KEY_SECRET).getBytes(), Base64.NO_WRAP);
 
         Context context = TapTalk.appContext;
-        
+
         String contentType = "application/json";
 
         if (MULTIPART_CONTENT_TYPE == headerAuth) {

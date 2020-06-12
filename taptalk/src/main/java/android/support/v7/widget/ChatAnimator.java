@@ -70,6 +70,7 @@ public class ChatAnimator extends SimpleItemAnimator {
     private static class ChangeInfo {
         public ViewHolder oldHolder, newHolder;
         public int fromX, fromY, toX, toY;
+
         private ChangeInfo(ViewHolder oldHolder, ViewHolder newHolder) {
             this.oldHolder = oldHolder;
             this.newHolder = newHolder;
@@ -382,6 +383,7 @@ public class ChatAnimator extends SimpleItemAnimator {
                 public void onAnimationStart(Animator animator) {
                     dispatchChangeStarting(changeInfo.newHolder, false);
                 }
+
                 @Override
                 public void onAnimationEnd(Animator animator) {
                     newViewAnimation.setListener(null);
@@ -415,6 +417,7 @@ public class ChatAnimator extends SimpleItemAnimator {
             endChangeAnimationIfNecessary(changeInfo, changeInfo.newHolder);
         }
     }
+
     private boolean endChangeAnimationIfNecessary(ChangeInfo changeInfo, ViewHolder item) {
         boolean oldItem = false;
         if (changeInfo.newHolder == item) {

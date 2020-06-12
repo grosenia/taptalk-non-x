@@ -1,6 +1,5 @@
 package io.taptalk.TapTalk.BroadcastReceiver;
 
-import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;

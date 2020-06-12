@@ -150,7 +150,7 @@ public class TAPMessageModel implements Parcelable {
         String quoteFileID = null == quotedMessage.getData() ? "" : (String) quotedMessage.getData().get(FILE_ID);
         String quoteImageURL = null == quotedMessage.getData() ? "" : null != quotedMessage.getData().get(FILE_URL) ? (String) quotedMessage.getData().get(FILE_URL) : (String) quotedMessage.getData().get(IMAGE_URL);
         String quoteFileType = quotedMessage.getType() == TYPE_IMAGE ? IMAGE :
-                        quotedMessage.getType() == TYPE_VIDEO ? VIDEO :
+                quotedMessage.getType() == TYPE_VIDEO ? VIDEO :
                         quotedMessage.getType() == TYPE_FILE ? FILE : "";
         TAPQuoteModel quote = new TAPQuoteModel(quoteTitle, quoteContent, quoteFileID, quoteImageURL, quoteFileType);
         TAPReplyToModel reply = new TAPReplyToModel(quotedMessage.getMessageID()

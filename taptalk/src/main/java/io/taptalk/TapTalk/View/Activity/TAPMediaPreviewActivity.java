@@ -23,9 +23,9 @@ import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Helper.TapTalkDialog;
 import io.taptalk.TapTalk.Manager.TAPFileUploadManager;
 import io.taptalk.TapTalk.Model.TAPMediaPreviewModel;
+import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Adapter.PagerAdapter.TAPMediaPreviewPagerAdapter;
 import io.taptalk.TapTalk.View.Adapter.TAPMediaPreviewRecyclerAdapter;
-import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.MEDIA_PREVIEWS;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.MessageType.TYPE_VIDEO;
@@ -177,7 +177,7 @@ public class TAPMediaPreviewActivity extends TAPBaseActivity {
         }
         medias.addAll(galleryMediaPreviews);
         checkMediasForErrors();
-            
+
         pagerAdapter.notifyDataSetChanged();
         if (1 < medias.size()) {
             tvMultipleImageIndicator.setText(String.format(getString(R.string.tap_format_dd_media_count), lastIndex + 1, medias.size()));
