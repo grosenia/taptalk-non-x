@@ -57,8 +57,8 @@ import io.taptalk.TapTalk.Model.TAPUserModel;
 import io.taptalk.TapTalk.Model.TapConfigs;
 import io.taptalk.TapTalk.View.Activity.TapUIChatActivity;
 import io.taptalk.TapTalk.ViewModel.TAPRoomListViewModel;
-import io.taptalk.Taptalk.BuildConfig;
-import io.taptalk.Taptalk.R;
+import io.taptalk.TapTalk.BuildConfig;
+import io.taptalk.TapTalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.ClientErrorCodes.ERROR_CODE_ACCESS_TOKEN_UNAVAILABLE;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.ClientErrorCodes.ERROR_CODE_ACTIVE_USER_NOT_FOUND;
@@ -171,6 +171,7 @@ public class TapTalk implements LifecycleObserver {
         } else {
             Hawk.init(appContext).build();
         }
+        Log.i("TapInfo", "Successfully Init Hawk");
 
         implementationType = type;
 
@@ -229,6 +230,8 @@ public class TapTalk implements LifecycleObserver {
         if (!listenerInit) {
             handleAppToForeground();
         }
+
+        Log.i("TapInfo", "Successfully Init TapTalk");
     }
 
     public static void initializeAnalyticsForSampleApps(String analyticsKey) {
@@ -335,6 +338,7 @@ public class TapTalk implements LifecycleObserver {
         }
         if (null == authTicket || "".equals(authTicket)) {
             listener.onError(ERROR_CODE_INVALID_AUTH_TICKET, ERROR_MESSAGE_INVALID_AUTH_TICKET);
+            Log.i("TapInfo", "Failed Autenticate Auth Ticket");
         } else {
             TAPDataManager.getInstance().saveAuthTicket(authTicket);
             TAPDataManager.getInstance().getAccessTokenFromApi(new TAPDefaultDataView<TAPGetAccessTokenResponse>() {
@@ -390,6 +394,8 @@ public class TapTalk implements LifecycleObserver {
                         Intent intent = new Intent(REFRESH_TOKEN_RENEWED);
                         LocalBroadcastManager.getInstance(appContext).sendBroadcast(intent);
                     }
+
+                    Log.i("TapInfo", "Successfully Autenticate Auth Ticket");
                 }
 
                 @Override
