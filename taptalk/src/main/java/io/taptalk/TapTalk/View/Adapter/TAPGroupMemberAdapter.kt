@@ -24,7 +24,7 @@ import io.taptalk.TapTalk.Helper.TapTalk
 import io.taptalk.TapTalk.Listener.TAPGroupMemberListListener
 import io.taptalk.TapTalk.Manager.TAPChatManager
 import io.taptalk.TapTalk.Model.TAPUserModel
-import io.taptalk.TapTalk.R
+import io.taptalk.Taptalk.R
 
 class TAPGroupMemberAdapter(cellMode: Int, members: List<TAPUserModel>, adminList: List<String>, groupInterface: TAPGroupMemberListListener) : TAPBaseAdapter<TAPUserModel, TAPBaseViewHolder<TAPUserModel>>() {
 
@@ -79,7 +79,7 @@ class TAPGroupMemberAdapter(cellMode: Int, members: List<TAPUserModel>, adminLis
         private val vSeparator: View = itemView.findViewById(R.id.v_separator)
         private val ivSelection: ImageView = itemView.findViewById(R.id.iv_selection)
         private val groupAdapter = adapter
-        private var isAdmin: Boolean = false
+        private var isAdmin : Boolean = false
 
         override fun onBind(item: TAPUserModel?, position: Int) {
             if (groupAdapter.adminList.isNotEmpty() && groupAdapter.adminList.contains(item?.userID

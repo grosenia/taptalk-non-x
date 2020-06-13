@@ -32,8 +32,8 @@ import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Interface.TapTalkActionInterface;
 import io.taptalk.TapTalk.Manager.TAPDataManager;
 import io.taptalk.TapTalk.Manager.TAPFileDownloadManager;
-import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.ViewModel.TAPVideoPlayerViewModel;
+import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.MESSAGE;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.Extras.URI;
@@ -355,8 +355,7 @@ public class TAPVideoPlayerActivity extends AppCompatActivity {
     }
 
     private View.OnClickListener saveButtonListener = v -> saveVideo();
-    private View.OnClickListener emptyListener = v -> {
-    };
+    private View.OnClickListener emptyListener = v -> {};
 
     private MediaPlayer.OnPreparedListener onPreparedListener = new MediaPlayer.OnPreparedListener() {
         @Override

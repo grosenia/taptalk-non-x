@@ -44,8 +44,8 @@ import io.taptalk.TapTalk.Manager.TAPCacheManager;
 import io.taptalk.TapTalk.Manager.TAPFileDownloadManager;
 import io.taptalk.TapTalk.Model.ResponseModel.TapChatProfileItemModel;
 import io.taptalk.TapTalk.Model.TAPMessageModel;
-import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Activity.TAPChatProfileActivity;
+import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.ChatProfileMenuType.MENU_NOTIFICATION;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.ChatProfileMenuType.MENU_VIEW_MEMBERS;
@@ -269,15 +269,15 @@ public class TapChatProfileAdapter extends TAPBaseAdapter<TapChatProfileItemMode
             ivThumbnail.setImageDrawable(null);
 
 //            if (null == thumbnail) {
-            thumbnail = new BitmapDrawable(
-                    itemView.getContext().getResources(),
-                    TAPFileUtils.getInstance().decodeBase64(
-                            (String) (null == message.getData().get(THUMBNAIL) ? "" :
-                                    message.getData().get(THUMBNAIL))));
-            if (thumbnail.getIntrinsicHeight() <= 0) {
-                // Set placeholder image if thumbnail fails to load
-                thumbnail = ContextCompat.getDrawable(itemView.getContext(), R.drawable.tap_bg_grey_e4);
-            }
+                thumbnail = new BitmapDrawable(
+                        itemView.getContext().getResources(),
+                        TAPFileUtils.getInstance().decodeBase64(
+                                (String) (null == message.getData().get(THUMBNAIL) ? "" :
+                                        message.getData().get(THUMBNAIL))));
+                if (thumbnail.getIntrinsicHeight() <= 0) {
+                    // Set placeholder image if thumbnail fails to load
+                    thumbnail = ContextCompat.getDrawable(itemView.getContext(), R.drawable.tap_bg_grey_e4);
+                }
 //            }
 
             // Load thumbnail when download is not in progress
@@ -342,25 +342,25 @@ public class TapChatProfileAdapter extends TAPBaseAdapter<TapChatProfileItemMode
                             activity.runOnUiThread(() -> {
                                 // Load media thumbnail
                                 glide.load(finalMediaThumbnail)
-                                        .apply(new RequestOptions().placeholder(thumbnail))
-                                        .listener(new RequestListener<Drawable>() {
-                                            @Override
-                                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                                return false;
-                                            }
+                                .apply(new RequestOptions().placeholder(thumbnail))
+                                .listener(new RequestListener<Drawable>() {
+                                    @Override
+                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                        return false;
+                                    }
 
-                                            @Override
-                                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                                if (position == getAdapterPosition()) {
-                                                    // Load image only if view has not been recycled
-                                                    isMediaReady = true;
-                                                    clContainer.setOnClickListener(v -> chatProfileInterface.onMediaClicked(message, ivThumbnail, isMediaReady));
-                                                    return false;
-                                                } else {
-                                                    return true;
-                                                }
-                                            }
-                                        }).into(ivThumbnail);
+                                    @Override
+                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                        if (position == getAdapterPosition()) {
+                                            // Load image only if view has not been recycled
+                                            isMediaReady = true;
+                                            clContainer.setOnClickListener(v -> chatProfileInterface.onMediaClicked(message, ivThumbnail, isMediaReady));
+                                            return false;
+                                        } else {
+                                            return true;
+                                        }
+                                    }
+                                }).into(ivThumbnail);
                             });
                         }
                     }

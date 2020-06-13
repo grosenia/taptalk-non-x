@@ -42,7 +42,7 @@ import java.lang.annotation.Retention;
 
 import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Helper.recyclerview_fastscroll.interfaces.OnFastScrollStateChangeListener;
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 

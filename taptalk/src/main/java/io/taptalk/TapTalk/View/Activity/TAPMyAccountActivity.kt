@@ -15,8 +15,8 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.support.v4.content.ContextCompat
-import android.support.v4.content.LocalBroadcastManager
 import android.support.v4.widget.ImageViewCompat
+import android.support.v4.content.LocalBroadcastManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
@@ -34,8 +34,7 @@ import io.taptalk.TapTalk.API.Api.TAPApiManager
 import io.taptalk.TapTalk.API.View.TAPDefaultDataView
 import io.taptalk.TapTalk.Const.TAPDefaultConstant.*
 import io.taptalk.TapTalk.Const.TAPDefaultConstant.PermissionRequest.*
-import io.taptalk.TapTalk.Const.TAPDefaultConstant.RequestCode.PICK_PROFILE_IMAGE_CAMERA
-import io.taptalk.TapTalk.Const.TAPDefaultConstant.RequestCode.PICK_PROFILE_IMAGE_GALLERY
+import io.taptalk.TapTalk.Const.TAPDefaultConstant.RequestCode.*
 import io.taptalk.TapTalk.Const.TAPDefaultConstant.UploadBroadcastEvent.*
 import io.taptalk.TapTalk.Helper.TAPBroadcastManager
 import io.taptalk.TapTalk.Helper.TAPUtils
@@ -46,11 +45,28 @@ import io.taptalk.TapTalk.Manager.*
 import io.taptalk.TapTalk.Model.ResponseModel.TAPCommonResponse
 import io.taptalk.TapTalk.Model.TAPErrorModel
 import io.taptalk.TapTalk.Model.TAPUserModel
-import io.taptalk.TapTalk.R
 import io.taptalk.TapTalk.View.BottomSheet.TAPAttachmentBottomSheet
 import io.taptalk.TapTalk.ViewModel.TAPRegisterViewModel
 import io.taptalk.TapTalk.ViewModel.TAPRoomListViewModel
+import io.taptalk.Taptalk.R
 import kotlinx.android.synthetic.main.tap_activity_my_account.*
+import kotlinx.android.synthetic.main.tap_activity_my_account.civ_profile_picture_overlay
+import kotlinx.android.synthetic.main.tap_activity_my_account.iv_edit_profile_picture_icon
+import kotlinx.android.synthetic.main.tap_activity_my_account.pb_profile_picture_progress
+import kotlinx.android.synthetic.main.tap_activity_my_account.tv_label_change_profile_picture
+import kotlinx.android.synthetic.main.tap_activity_my_account.tv_label_password
+import kotlinx.android.synthetic.main.tap_activity_my_account.civ_profile_picture
+import kotlinx.android.synthetic.main.tap_activity_my_account.cl_form_container
+import kotlinx.android.synthetic.main.tap_activity_my_account.cl_password
+import kotlinx.android.synthetic.main.tap_activity_my_account.et_email_address
+import kotlinx.android.synthetic.main.tap_activity_my_account.et_full_name
+import kotlinx.android.synthetic.main.tap_activity_my_account.et_mobile_number
+import kotlinx.android.synthetic.main.tap_activity_my_account.et_username
+import kotlinx.android.synthetic.main.tap_activity_my_account.fl_container
+import kotlinx.android.synthetic.main.tap_activity_my_account.tv_country_code
+import kotlinx.android.synthetic.main.tap_activity_my_account.tv_label_email_address_error
+import kotlinx.android.synthetic.main.tap_activity_my_account.tv_label_full_name_error
+import kotlinx.android.synthetic.main.tap_activity_my_account.v_password_separator
 import kotlinx.android.synthetic.main.tap_layout_popup_loading_screen.*
 
 class TAPMyAccountActivity : TAPBaseActivity() {

@@ -6,7 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.LruCache;
 
 import io.taptalk.TapTalk.Helper.DiskLruCache.DiskLruImageCache;
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 
 public class TAPCacheManager {
@@ -169,11 +169,9 @@ public class TAPCacheManager {
             return;
         }
         new Thread(() -> {
-            if (null != diskLruCache) {
-                getMemoryCache().evictAll();
-                diskLruCache.clearCache();
-                diskLruCache = null;
-            }
+            getMemoryCache().evictAll();
+            diskLruCache.clearCache();
+            diskLruCache = null;
         }).start();
     }
 }

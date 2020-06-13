@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import io.taptalk.TapTalk.R
+import io.taptalk.Taptalk.R
 import kotlinx.android.synthetic.main.tap_activity_web_browser.*
 
 class TAPWebBrowserActivity : AppCompatActivity() {
