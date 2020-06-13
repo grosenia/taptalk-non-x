@@ -60,7 +60,7 @@ android {
             signingConfig signingConfigs.release
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            minifyEnabled true
+            minifyEnabled false
             zipAlignEnabled true
             buildConfigField("String", "GOOGLE_MAPS_API_KEY", "\"${RELEASE_GOOGLE_MAPS_API_KEY}\"")
             buildConfigField("String", "TAPTALK_SDK_APP_KEY_ID", "\"${RELEASE_TAPTALK_SDK_APP_KEY_ID}\"")
