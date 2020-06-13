@@ -38,8 +38,8 @@ import io.taptalk.TapTalk.Model.ResponseModel.TAPAddContactResponse;
 import io.taptalk.TapTalk.Model.ResponseModel.TAPGetUserResponse;
 import io.taptalk.TapTalk.Model.TAPErrorModel;
 import io.taptalk.TapTalk.Model.TAPUserModel;
-import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.ViewModel.TAPScanResultViewModel;
+import io.taptalk.Taptalk.R;
 
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.ADDED_CONTACT;
 import static io.taptalk.TapTalk.Const.TAPDefaultConstant.SCAN_RESULT;

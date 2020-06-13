@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import io.taptalk.TapTalk.Helper.TAPBaseViewHolder;
 import io.taptalk.TapTalk.Helper.TAPUtils;
 import io.taptalk.TapTalk.Model.TAPMediaPreviewModel;
-import io.taptalk.TapTalk.R;
 import io.taptalk.TapTalk.View.Activity.TAPMediaPreviewActivity;
+import io.taptalk.Taptalk.R;
 
 public class TAPMediaPreviewRecyclerAdapter extends TAPBaseAdapter<TAPMediaPreviewModel, TAPBaseViewHolder<TAPMediaPreviewModel>> {
 

@@ -21,7 +21,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 
-import io.taptalk.TapTalk.R;
+import io.taptalk.Taptalk.R;
 
 /**
  * https://github.com/saket/Better-Link-Movement-Method/blob/master/better-link-movement-method/src/main/java/me/saket/bettermovementmethod/BetterLinkMovementMethod.java
